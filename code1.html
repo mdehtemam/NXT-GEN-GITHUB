@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NXT GEN GIT HUB</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        header{
+            margin-top: 0;
+            position: fixed;
+            background-color: black;
+            height: 10%;
+            width: 100%;
+            z-index: 2;
+        }
+        .logo{
+            position: relative;
+            top: 10%;
+            left: 2%;
+            height: 85%;
+            width: 6%;
+        }
+        ul{
+            position: absolute;
+            font-family: "Chivo Mono", monospace;
+            display: flex;
+            gap: 30%;
+            left: 10%;
+            top: 30%;
+        }
+        ul li a{
+            font-size: 200%;
+            font-weight: 100;
+            text-decoration: none;
+            color: white;
+        }
+        .search{
+            background: transparent;
+            position: absolute;
+            display: flex;
+            padding: 6px;
+            top: 23%;
+            right: 12%;
+            height: 40%;
+            border-radius: 50px;
+            transition: 0.4s;
+        }
+        .search:hover{
+            background: rgba(255,255,255,0.1);
+        }
+        form{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: row;
+        }
+        .search #textbox{
+            color: white;
+            background: transparent;
+            text-indent: 16px;
+            width: 0;
+            height: 100%;
+            border: none;
+            outline: none;
+            transition: 0.4s;
+        }
+        .search:hover #textbox{
+            width: 180px;
+        }
+        form img{
+            pointer-events: none;
+            margin: auto;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+            background: #8f44fd;
+        }
+        .signin{
+            font-size: 100%;
+            color: white;
+            position: absolute;
+            height: 50%;
+            width: 5%;
+            right: 7%;
+            top: 25%;
+            border-radius: 10px;
+            background: transparent;
+        }
+        .signup{
+            font-size: 100%;
+            color: white;
+            position: absolute;
+            height: 50%;
+            width: 5%;
+            right: 2%;
+            top: 25%;
+            border: 2px dotted white;
+            border-radius: 10px;
+            background: transparent;
+        }
+        nav{
+            margin-left: 23%;
+            width: 77%;
+            height: 10%;
+            position: fixed;
+            top: 10%;
+            display: flex;
+            gap: 5%;
+            z-index: 1;
+        }
+        nav a{
+            text-decoration: none;
+            margin-bottom: 0;
+            font-size: 150%;
+            color: black;
+            margin-top: 2.7%;
+        }
+        hr{
+            position: fixed;
+            top: 17.5%;
+            margin-left: 22%;
+            width: 80%;
+            z-index: 2;
+        }
+        .profile{
+            margin-left: 1%;
+            position: fixed;
+            top: 12%;
+            height: 90%;
+            width: 16%;
+            z-index: 1;
+        }
+        .profile img{
+            position: relative;
+            width: 100%;
+            height: 34%;
+            border-radius: 50%;
+        }
+        .profile .avatar{
+            float: right;
+            height: 7%;
+            width: 16%;
+            top: -8%;
+            right: 8%;
+            border-radius: 50%;
+        }
+        .profile h1{
+            margin-top: 2%;
+            margin-left: 2%;
+        }
+        .profile h2{
+            margin-left: 2%;
+            font-size: 150%;
+        }
+        .profile .follow-btn{
+            margin-top: 5%;
+            margin-left: 2%;
+            height: 4%;
+            width: 96%;
+            background-color: gray;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        .profile p{
+            margin-left: 2%;
+            margin-top: 5%;
+            font-size: 153%;
+        }
+        .box {
+          position: relative;
+          top: 200px;
+          left: 22%;
+          background-color:white;
+          width: 75%;
+          height: 100%;
+          border: 1px solid #000;
+          font-size: large;
+          padding: 10px;
+          text-align: center;
+          text-align: left;
+          margin: 10px;
+          
+}
+        .bold1{
+          font-size: 250%;
+          color:  #8f44fd;
+        }
+        .com{background-color: yellow;}
+        nav:hover a{color: blue;}
+        
+
+  
+
+
+
+
+
+
+        
+        
+    </style>
+</head>
+<body>
+<header>
+    <img src="gitlogo.jpg" class="logo">
+    <ul>
+        <li><a href="https://api.whatsapp.com/send/?phone=8595538357&text&type=phone_number&app_absent=0">ContactUs</a></li>
+        
+        <li><a href="#">Source</a></li>
+        <li><a href="#">Pricing</a></li>
+        
+    </ul>
+    <section class="search">
+        <form>
+            <img src="PROFILEPHOTO.jpeg">
+            <input type="search" placeholder="Search..." id="textbox" onkeyup="search()">
+        </form>
+    </section>
+    <button class="signin">Sign in</button>
+    <button class="signup">Sign up</button>
+</header>
+<nav>
+    
+    <a href="index.html.html">Repositories</a>
+    <a href="project.html">Projects</a>
+    
+    
+    
+</nav>
+<hr>
+
+<div class="profile">
+    <img src="JOKER.jpeg">
+    <img src="JOKER.jpeg" class="avatar">
+    <h1>Md Ehtemam</h1>
+    <h2>Ehtemam1234</h2>
+    <button class="follow-btn" onclick="toggleFollow()">Follow +</button>
+    <p>Learning Student at Netaji Subhash University of Technology</p>
+    <p>5 followeers - 6 following</p>
+    <hr>
+</div>
+
+<div class="box">
+    <p class="com"><b># SOORY,YOU CAN’T SAVE THE CHANGE DONE BY YOU.(WE ARE WORKING ON THAT)  <pre>
+        
+    </pre>
+
+    </b></p>
+   <pre contenteditable="true" >
+   
+   &lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;My-Weather-App&lt;/title&gt;
+    &lt;style&gt;
+        *{
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background-color: lightgrey;
+            height: 100%;
+            width: 100%;
+            margin: auto;
+            align-items: center;
+            justify-content: center;
+            
+        }
+        header{
+            display: flex;
+            flex-direction: row;
+            position: relative;
+            height: 12vh;
+            background-color: black;
+        }
+        ul{
+            font-family: "Chivo Mono", monospace;
+            display: flex;
+            gap: 72px;
+            margin: auto;
+            margin-left: 10vw;
+        }
+        ul li{
+            list-style: none;
+        }
+        ul li a{
+            font-size: 30px;
+            font-weight: 700;
+            text-decoration: none;
+            text-transform: uppercase;
+            color: white;
+            padding: 10px;
+            transition: 0.5s ease;
+        }
+        ul:hover li a{
+            color: #30edf4;
+        }
+        ul:hover li a:not(:hover){
+            color: white;
+            opacity: 0.3;
+            filter: blur(1px);
+        }
+        .logo{
+            position: relative;
+            height: 8vh;
+            width: 5vw;
+            top: 15px;
+            margin-left: 20px;
+        }
+        h1{
+            font-family: algerian;
+            font-size: 50px;
+            margin-left: 2vw;
+            margin-top: 2.5vh;
+            color: yellow;
+        }
+        .container {
+            background: #fff;
+            position: absolute;
+            left: 10%;
+            top: 50px;
+            width: 50%;
+            height: 50px;
+            border: 2px solid black;
+            border-radius: 40px;
+        }
+        form{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: row;
+        }
+        #search-city{
+            width: 100%;
+            height: 100%;
+            padding: 10px 35px 10px 15px;
+            border: none;
+            border-radius: 100px;
+            outline: none;
+        }
+        form img{
+            margin: auto;
+            margin-left: 4%;
+            width: 30px;
+            height: 60%;
+            object-fit: cover;
+        }
+        hr{
+            margin-top: 5px;
+        }
+        button{
+            background-color: rgb(173, 209, 144);
+            margin-top: 2.05%;
+            margin-left: 1%;
+            position: relative;
+            height: 25px;
+            width: auto;
+            font-size: 20px;
+        }
+        div{
+            position: relative;
+        }
+        .box{
+            background-color: white;
+            position: relative;
+            overflow-y: scroll;
+            width: 60vw;
+            height: 335vh;
+            padding: 10px;
+            margin-top: 10px;
+            margin-left: 4vw;
+            border: 2px solid black;
+            box-shadow: 4px 4px 4px black;
+        }
+        .box:hover{
+            transform: width;
+        }
+        .box::-webkit-scrollbar{
+            display: none;
+        }
+        #city-list{
+			display: grid;
+			grid-gap: 25px;
+			grid-template-columns: 1fr;
+            margin-top: 10vh; 
+            margin-left: 4vw;
+		}
+        .card{
+            position: relative;
+            padding: 15px;
+            margin-left: 0vw;
+            border: 5px solid black;
+            margin-top: 5vh;
+            cursor: pointer;
+            background-color: white;
+            height: 30vh;
+            width: 50vw;
+            border-radius: 50px 0 50px 0;
+            box-shadow: 4px 4px 30px black;
+        }
+        .card:hover{
+            transition: all 5s ease;
+            transform: scale(1.05);
+        }
+        .temp{
+            margin-top: 0px;
+            margin-left: 5vw;
+            margin-bottom: 0;
+            font-size: 150px;
+        }
+        h2{
+            margin-top: 0;
+            font-size: 50px;
+            margin-left: 5vw;
+            margin-bottom: 0;
+        }
+        .weatherlogo{
+            height: 250px;
+            width: 300px;
+            position: absolute;
+            top: 2vh;
+            left: 50%;
+            margin-bottom: 0;
+        }
+        .moredetails{
+            font-size: 20px;
+            position: absolute;
+            margin-left: 40vw;
+            margin-top: 0%;
+        }
+        .table3{
+            padding: 15px;
+            background-color: white;
+            float: right;
+            top: 0%;
+            right: 1%;
+            position: absolute;
+            width: 28vw;
+            height: 200vh;
+        }
+        .t31{
+            text-align: center;
+            height: 60px;
+            font-size: 25px;
+            border: none;
+            border-bottom: 3px solid black;
+        }
+        .t32,.t33,.t34,.t35{
+            height: 320px;
+            font-size: 30px;
+        }
+        td{
+            border: none;
+            border-bottom: 2px solid black;
+        }
+        .lastbox{
+            border: none;
+        }
+        .image{
+            border: none;
+            height: 150px;
+            width: 150px;
+            margin-top: 0;
+            float: right;
+            position: relative;
+            justify-content: space-around;
+            border: 2px solid yellow;
+            border-radius: 10px;
+            box-shadow: 5px 5px 5px;
+        }
+        .table2{
+            left: 1%;
+            position: absolute;
+            border: 1px solid black;
+            border-collapse: collapse;
+            top: 500px;
+        }
+        .table2,.t21{
+            width: 58%;
+            height: 900px;
+        }
+        .t37{
+            text-align: center;
+            height: 60px;
+            font-size: 25px;
+            border: none;
+            border-bottom: 3px solid black;
+            border-top: 3px solid black;
+            background: #6ce813;}
+        .hype{
+            font-style: normal;
+        }
+        .goldsky{
+            padding: 15px;
+            background-color: white;
+            float: right;
+            top: 210vh;
+            
+            right: 1%;
+            position: absolute;
+            width: 28vw;
+            height: 70vh;
+        }
+        footer {
+            margin-top: 5vh;
+  background-color: #f9f9f9;
+  color: #666;
+  padding: 20px 0;
+  font-size: 14px;
+}
+
+.containe {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.col-md-6 {
+  width: 50%;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.footer-links li {
+  margin-right: 20px;
+}
+
+.footer-links li:last-child {
+  margin-right: 0;
+}
+
+.footer-links a {
+  color: #666;
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  color: #333;
+}
+        
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;header&gt;
+    &lt;img class="logo" src="logo.png"&gt;
+    &lt;h1&gt;ACE WEATHER&lt;/h1&gt;
+    &lt;ul&gt;
+        &lt;li class="contactus"&gt;&lt;a href="https://api.whatsapp.com/send/?phone=918595538357&text&type
+        =phone_number&app_absent=0" target="_blank"&gt;Contact Us&lt;/a&gt;&lt;/li&gt;
+        
+        
+    &lt;/ul&gt;
+&lt;/header&gt;
+
+&lt;br&gt;
+&lt;div&gt;
+    &lt;div class="box"&gt;
+        &lt;section class="container"&gt;
+            &lt;form&gt;
+                &lt;img src="searchlogo.png"&gt;
+                &lt;input type="search" placeholder="Search city ..." id="search-city" onkeyup="search()"&gt;
+            &lt;/form&gt;
+        &lt;/section&gt;
+        &lt;div id="city-list"&gt;
+            &lt;div class="card"&gt;&lt;p class="temp"&gt;17°&lt;/p&gt;&lt;h2&gt; Delhi, India &lt;/h2&gt;
+             &lt;img src="rain.png" class="weatherlogo"&gt;&lt;/div&gt;
+            &lt;div class="card"&gt;&lt;p class="temp"&gt;27°&lt;/p&gt;&lt;h2&gt; Mumbai, India &lt;/h2&gt; 
+            &lt;img src="sun.png" class="weatherlogo"&gt;&lt;/div&gt;
+            &lt;div class="card"&gt;&lt;p class="temp"&gt;23°&lt;/p&gt;&lt;h2&gt; bangalore, India &lt;/h2&gt;
+             &lt;img src="rain.png" class="weatherlogo"&gt;&lt;/div&gt;
+            &lt;div class="card"&gt;&lt;p class="temp"&gt;25°&lt;/p&gt;&lt;h2&gt; goa, India &lt;/h2&gt; &lt;
+            img src="sun.png" class="weatherlogo"&gt;&lt;/div&gt;
+            &lt;div class="card"&gt;&lt;p class="temp"&gt;25°&lt;/p&gt;&lt;h2&gt; Kolkata, India &lt;/h2&gt; 
+            &lt;img src="rain.png" class="weatherlogo"&gt;&lt;/div&gt;
+            &lt;div class="card"&gt;&lt;p class="temp"&gt;25°&lt;/p&gt;&lt;h2&gt; Chennei, India &lt;/h2&gt;
+             &lt;img src="rain.png" class="weatherlogo"&gt;&lt;/div&gt;
+            &lt;div class="card"&gt;&lt;p class="temp"&gt;10°&lt;/p&gt;&lt;h2&gt; Washington DC, America&lt;
+            /h2&gt; &lt;img src="sun.png" class="weatherlogo"&gt;&lt;/div&gt;
+            &lt;div class="card"&gt;&lt;p class="temp"&gt;3°&lt;/p&gt;&lt;h2&gt; Tokyo, Japan &lt;/h2&gt; &lt;
+            img src="cold.png" class="weatherlogo"&gt;&lt;a href="#" class="moredetails"&gt;More Details&lt;
+            /a&gt;&lt;/div&gt;
+            &lt;div class="card"&gt;&lt;p class="temp"&gt;8°&lt;/p&gt;&lt;h2&gt; Rome, Italy &lt;/h2&gt; &lt;
+            img src="rain.png" class="weatherlogo"&gt;&lt;a href="#" class="moredetails"&gt;More Details&lt;
+            /a&gt;&lt;/div&gt;
+            &lt;div class="card"&gt;&lt;p class="temp"&gt;7°&lt;/p&gt;&lt;h2&gt; London, England &lt;/h2&gt; 
+            &lt;img src="cold.png" class="weatherlogo"&gt;&lt;a href="#" class="moredetails"&gt;More Details
+            &lt;/a&gt;&lt;/div&gt;
+            &lt;div class="card"&gt;&lt;p class="temp"&gt;17°&lt;/p&gt;&lt;h2&gt; Patna, India &lt;/h2&gt; 
+            &lt;img src="sun.png" class="weatherlogo"&gt;&lt;a href="#" class="moredetails"&gt;More Details
+            &lt;/a&gt;&lt;/div&gt;
+            &lt;div class="card"&gt;&lt;p class="temp"&gt;18°&lt;/p&gt;&lt;h2&gt; Lucknow, India &lt;/h2&gt;
+             &lt;img src="sun.png" class="weatherlogo"&gt;&lt;a href="#" class="moredetails"&gt;More Details
+             &lt;/a&gt;&lt;/div&gt;
+            &lt;div class="card"&gt;&lt;p class="temp"&gt;25°&lt;/p&gt;&lt;h2&gt; Gandhi Nagar, India &lt;/
+            h2&gt; &lt;img src="sun.png" class="weatherlogo"&gt;&lt;a href="#" class="moredetails"&gt;More 
+            Details&lt;/a&gt;&lt;/div&gt;
+            &lt;div class="card"&gt;&lt;p class="temp"&gt;12°&lt;/p&gt;&lt;h2&gt; Jammu, India &lt;/h2&gt; 
+            &lt;img src="cold.png" class="weatherlogo"&gt;&lt;a href="#" class="moredetails"&gt;More Details
+            &lt;/a&gt;&lt;/div&gt;
+            &lt;div class="card"&gt;&lt;p class="temp"&gt;12°&lt;/p&gt;&lt;h2&gt; Shimla, India &lt;/h2&gt; 
+            &lt;img src="rain.png" class="weatherlogo"&gt;&lt;a href="#" class="moredetails"&gt;More Details
+            &lt;/a&gt;&lt;/div&gt;
+            &lt;div class="card"&gt;&lt;p class="temp"&gt;30°&lt;/p&gt;&lt;h2&gt; Ahmedabad, India &lt;/h2&gt
+            ; &lt;img src="sun.png" class="weatherlogo"&gt;&lt;a href="#" class="moredetails"&gt;More 
+            Details&lt;/a&gt;&lt;/div&gt;
+            &lt;div class="card"&gt;&lt;p class="temp"&gt;22°&lt;/p&gt;&lt;h2&gt; Surat, India &lt;/h2&gt; 
+            &lt;img src="sun.png" class="weatherlogo"&gt;&lt;a href="#" class="moredetails"&gt;More Details&lt;
+            /a&gt;&lt;/div&gt;
+            &lt;div class="card"&gt;&lt;p class="temp"&gt;27°&lt;/p&gt;&lt;h2&gt; Pune, India &lt;/h2&gt; 
+            &lt;img src="sun.png" class="weatherlogo"&gt;&lt;a href="#" class="moredetails"&gt;More Details&lt;
+            /a&gt;&lt;/div&gt;
+            &lt;div class="card"&gt;&lt;p class="temp"&gt;15°&lt;/p&gt;&lt;h2&gt; Agra, India &lt;/h2&gt; 
+            &lt;img src="rain.png" class="weatherlogo"&gt;&lt;a href="#" class="moredetails"&gt;More Details&lt;
+            /a&gt;&lt;/div&gt;
+            &lt;div class="card"&gt;&lt;p class="temp"&gt;25°&lt;/p&gt;&lt;h2&gt; Alighar, India &lt;/h2&gt;
+             &lt;img src="sun.png" class="weatherlogo"&gt;&lt;a href="#" class="moredetails"&gt;More
+              Details&lt;/a&gt;&lt;/div&gt;
+            &lt;div class="card"&gt;&lt;p class="temp"&gt;30°&lt;/p&gt;&lt;h2&gt; Allahabad, India &lt;/h2&gt;
+             &lt;img src="sun.png" class="weatherlogo"&gt;&lt;a href="#" class="moredetails"&gt;More 
+             Details&lt;/a&gt;&lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;table class="table3"&gt;
+        &lt;th class="t31"&gt;TOP STORIES&lt;/th&gt;
+        &lt;tr class="t32"&gt;
+            &lt;td&gt;&lt;img src="snow.jpeg" class="image"&gt;Texas and Oklahoma Winter Storms:
+             In February 2023, a winter storm hit Texas and Oklahoma, causing widespread power outages,
+              broken water pipes, and food and fuel shortages. The storm caused at least 30 deaths and 
+              millions of dollars in damage.&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr class="t33"&gt;
+            &lt;td&gt;&lt;img src="flood1.jpeg" class="image"&gt;2022 Hurricane Season: The 2022
+             hurricane season was one of the most active and destructive on record, with multiple storms
+              causing widespread damage across the Caribbean and the United States. Hurricane Maria, 
+              which hit Puerto Rico, was one of the most devastating storms, causing widespread power
+               outages and flooding.&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr class="t34"&gt;
+            &lt;td&gt;&lt;img src="fire.jpeg" class="image"&gt;Wildfires in California: In 2021, 
+            California experienced its largest and most destructive wildfire season in history, 
+            with over 10,000 fires burning more than 4 million acres. The fires caused widespread 
+            evacuations and destroyed thousands of homes and other structures.&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr class="t35"&gt;
+            &lt;td class="lastbox"&gt;&lt;img src="flood.jpeg" class="image"&gt;Flooding in South
+             Asia: In August 2017, monsoon floods affected millions of people in South Asia,
+              including India, Nepal, and Bangladesh. The floods caused widespread destruction, 
+              killing over 1,200 people and leaving millions homeless.&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/table&gt;
+
+    &lt;table CLASS="goldsky"&gt;
+        &lt;th class="t37"&gt;ADS&lt;/th&gt;
+        &lt;TR&gt;&lt;TD&gt;&lt;PRE&gt;                                                     
+          &lt;/PRE&gt;&lt;/TD&gt;&lt;/TR&gt;
+        &lt;th&gt;&lt;marquee behavior="alternate" direction="right"&gt;GOLD SKY BAGS&lt;/marquee&gt;&lt;
+        /th&gt;
+        
+        &lt;tr class="t36"&gt;
+            &lt;td class="lastbox1"&gt;&lt;img src="3.jpg" class="image"&gt;&lt;b&gt;  
+            GOLD SKY &lt;/b&gt; This quality casual day pack comes without any bells and whistles.
+            The clean silhouette is fashionable and modern while still having a heritage feel. There’s
+            nothing complicated on this bag, just a 2 spacious main chamber for books and binders plus
+            a laptop compartment . Back small zipper pocket for tiny things . The product is made from
+            polyester on the inside and outside It features : Lite in weight backpack with spacious
+            compartments, soft shell, zipper closure, shoulder strap and is targeted towards both the 
+            genders.This large 25-30 litres backpack from the house of GOLD SKY provides separate
+            spaces for a laptop and related accessories. With two spacious compartments, you can
+            easily pack all your travel essentials in this one bag. You also have the option of
+            external bottle holders for quick and easy access. It is lightweight and comfortable
+            to carry. This trendy polyester backpack is dust-proof and water-resistant in nature
+            which ensures that your belongings are safe even on a rainy day. &lt;a href=
+           "https://www.flipkart.com/gold-sky-spacy-unisex-backpack-rain-cover-reflective-
+            strip-35-l/p/itm002eba87edce0?pid=BKPGGMX3CKJ774ZN&lid=LSTBKPGGMX3CKJ774ZNJ9C4ZU&ma
+            rketplace=FLIPKART&q=gold+sky+bag&store=reh%2F4d7%2Fak9&srno=s_1_4&otracker=search&
+            otracker1=search&fm=Search&iid=5fedbd81-784c-4540-9db5-86c1361ec2c7.BKPGGMX3CKJ774Z
+            N.SEARCH&ppt=sp&ppn=sp&ssid=lzntnwx3i80000001676394996909&qH=591594f3a622aa25" ta
+            rget="_blank"&gt;  &lt;PRE&gt;    BUY NOW&lt;/PRE&gt; &lt;/a&gt;  &lt;/td&gt;
+        &lt;/tr&gt;
+        
+        &lt;td class="lastbox2"&gt;&lt;img src="gold.JPG" class="image"&gt; &lt;p&gt; 
+         GOLD SKY&lt;/p&gt; This backpack comes with 3 spacious compartment. Maximized comfort with 
+         padded, breathable back system. Its adjustable shoulder straps with padded air mesh and back
+          padding ensure long lasting comfort while carrying this backpack. It's Durable high - quality 
+          fabric and seam strength ensure that this backpack last long, even if you use it all day, everyday.
+           &lt;PRE&gt;                                         &lt;/PRE&gt;                     &lt;a
+            href="https://www.flipkart.com/gold-sky-casual-35l-college-office-travel-backpack-15-6-laptop-
+            compartment-unisex-35-l/p/itm1bc13b13d47dd?pid=BKPGEESGHMRWYPGX&lid=LSTBKPGEESGHMRWYPGXDMQG
+            QY&marketplace=FLIPKART&q=gold+sky&store=search.flipkart.com&srno=s_1_7&otracker=search&ot
+            racker1=search&fm=Search&iid=f54d4c2c-9ed0-4be3-8385-c1afe4003f43.BKPGEESGHMRWYPGX.SEARCH&
+            ppt=sp&ppn=sp&qH=5841bc9a7241e88c" target="blank" class="hype"&gt;     BUY NOW&lt;/a&gt;  
+            &lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/table&gt;
+&lt;/div&gt;
+&lt;footer&gt;
+    &lt;div class="containe"&gt;
+      &lt;div class="row"&gt;
+        &lt;div class="col-md-6"&gt;
+          &lt;p&gt;&copy; 2023 My Weather Website&lt;/p&gt;
+        &lt;/div&gt;
+        &lt;div class="col-md-6"&gt;
+          &lt;ul class="footer-links"&gt;
+            &lt;li&gt;&lt;a href="https://www.instagram.com/midshiponline/" target="_blank"&gt;
+            INSTAGRAM&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="https://www.linkedin.com/feed/" target="_blank"&gt;LINKEDIN&lt
+            ;/a&gt;&lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/footer&gt;
+&lt;/body&gt;
+&lt;script src="search.js"&gt;
+
+&lt;/script&gt;
+
+&lt;/html&gt;
+</pre>
+
+    
+</div>
+
+
+  
+
+
+
+
+
+
+</body>
+
+
+
+<script>
+    function toggleFollow() {
+      var btn = document.querySelector('.follow-btn');
+      if (btn.innerText === 'Follow +') {
+        btn.innerText = 'Following ✓';
+        btn.style.backgroundColor = 'blue';
+      } 
+      else {
+        btn.innerText = 'Follow +';
+        btn.style.backgroundColor = 'gray';
+      }
+    }
+  </script>
+</html>
